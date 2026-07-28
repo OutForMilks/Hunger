@@ -24,12 +24,13 @@ We use a **Transformer encoder-decoder** (Vaswani et al., 2017) written from scr
 
 View the notebooks enumerated below, also view the notebooks in the order indicated.
 
-1. `g2p.ipynb`: contains the setup, data preparation, and training pipeline for the Transformer G2P model (Colab-ready).
+1. `notebooks/g2p.ipynb`: contains the setup, data preparation, and training pipeline for the Transformer G2P model (Colab-ready).
 1. `notebooks/language_abl.ipynb`: contains the language-ablation study comparing training mixes — Tagalog + Philippine languages, Tagalog + non-Philippine Austronesian languages, and everything combined — plus the addition of Castilian Spanish (a major loanword source for Tagalog) and tuning of the language-sampling temperature.
 1. `notebooks/languages.ipynb`: contains the language-similarity analysis (phoneme inventory, script, and URIEL genetic/geographic distances) relating transfer to language relatedness.
+1. `notebooks/per_model_eval.ipynb`: contains the per-checkpoint error analysis (substitution/deletion/insertion breakdown, glottal stop position, vowel confusion) for all 12 checkpoints behind the ensemble in `g2p.ipynb`.
 
 ## Data
 
 The pronunciation data used in the project is mined from Wiktionary by the WikiPron project (Lee et al., 2020), available at [github.com/CUNY-CL/wikipron](https://github.com/CUNY-CL/wikipron) under the Apache 2.0 license (the underlying Wiktionary data is CC BY-SA 3.0).
 
-The dataset is also available as `.tsv` files in the repository: per-language WikiPron data in the `wikipron/` directory (grouped into `filipino/` and `austronesian/`), and the Tagalog train/dev/test splits in the `data/` directory.
+The dataset is also available as `.tsv` files in the repository: per-language WikiPron data in the `data/wikipron/` directory (grouped into `filipino/` and `austronesian/`), and the Tagalog train/dev/test splits in the `data/` directory.

@@ -1,5 +1,4 @@
 /src/__pycache__
-/prepare
-/models
+/notebooks/prepare
 /notebooks/ablation
 /notebooks/models
