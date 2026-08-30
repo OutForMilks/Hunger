@@ -18,16 +18,15 @@
 
 ## Machine Learning Model
 
-We use a **Transformer encoder-decoder** (Vaswani et al., 2017) written from scratch, trained on pooled, language-tagged WikiPron pronunciation data. Auxiliary languages are mixed in with temperature sampling, and every model is scored on the same held-out Tagalog test set.
-
+We use an **ensemble of traformers** (Vaswani et al., 2017), trained on pooled, language-tagged WikiPron pronunciation data. Auxiliary languages are mixed in with temperature sampling, and every model is scored on the same held-out Tagalog test set.
 ## Notebooks
 
 View the notebooks enumerated below, also view the notebooks in the order indicated.
 
-1. `notebooks/g2p.ipynb`: contains the setup, data preparation, and training pipeline for the Transformer G2P model (Colab-ready).
-1. `notebooks/language_abl.ipynb`: contains the language-ablation study comparing training mixes — Tagalog + Philippine languages, Tagalog + non-Philippine Austronesian languages, and everything combined — plus the addition of Castilian Spanish (a major loanword source for Tagalog) and tuning of the language-sampling temperature.
-1. `notebooks/languages.ipynb`: contains the language-similarity analysis (phoneme inventory, script, and URIEL genetic/geographic distances) relating transfer to language relatedness.
-1. `notebooks/per_model_eval.ipynb`: contains the per-checkpoint error analysis (substitution/deletion/insertion breakdown, glottal stop position, vowel confusion) for all 12 checkpoints behind the ensemble in `g2p.ipynb`.
+1. `notebooks/g2p.ipynb`: contains the setup, data preparation, training pipeline, and error analysis for the ensambled model.
+2. `notebooks/languages.ipynb`: contains the language-similarity analysis for language group construction.
+3. `notebooks/language_abl.ipynb`: contains the language ablation and temperature tuning of smaller single transformers.
+4. `notebooks/per_model_eval.ipynb`: contains the per-checkpoint error analysis for all 12 checkpoints behind the ensemble in `g2p.ipynb`.
 
 ## Data
 
